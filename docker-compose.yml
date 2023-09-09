@@ -1,0 +1,17 @@
+version: "3.8"
+name: coming-soon
+
+networks:
+  onushthan-network:
+    driver: bridge
+
+services:
+  nginx:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: onushthan/coming-soon:dev
+    networks:
+      - onushthan-network
+    ports:
+      - 8080:80
